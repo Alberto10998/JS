@@ -1,0 +1,65 @@
+Actúa como un desarrollador Senior Frontend y experto en UI/UX para crear una SPA (Single Page Application) profesional usando Vite y React (o HTML/JS moderno).
+
+PROYECTO: Sitio web para "J.S. SERVICIOS PROFESIONALES, S.C. (JIMENEZ SILLER)".
+
+DISEÑO Y ESTÉTICA (BRANDING LUXURY):
+
+Paleta de Colores: Fondo general #0A0A0A (Negro profundo), secciones/cards #1C1C1C (Gris carbón), acentos y botones #D4AF37 (Oro principal), títulos #FFFFFF (Blanco limpio), texto secundario #B3B3B3 (Gris claro).
+
+Tipografía: Títulos en Serif elegante (estilo Playfair Display) y cuerpo de texto en Sans-serif (estilo Montserrat o Inter).
+
+Atmósfera: Debe transmitir solidez, confianza y elegancia. Usa espaciado generoso (whitespace) y animaciones de entrada suaves (fade-in) al hacer scroll.
+
+ESTRUCTURA DE NAVEGACIÓN Y SECCIONES:
+
+HERO SECTION: > - Headline: "J.S. SERVICIOS PROFESIONALES, S.C."
+
+Subheadline: "Consultoría integral contable, administrativa, fiscal y legal. Soluciones estratégicas para el cumplimiento de sus obligaciones."
+
+Fondo: Imagen de oficina corporativa con overlay oscuro para legibilidad.
+
+CTAs: Botón "Nuestros Servicios" (Oro) y "Agendar Consulta" (Outline Blanco).
+
+QUIENES SOMOS:
+
+Descripción: Sociedad Civil constituida desde 2016. Especialistas altamente calificados brindando soluciones a personas físicas y morales en contabilidad, administración e impuestos.
+
+Misión: Brindar soluciones integrales en consultoría contable y legal que garanticen la tranquilidad y el crecimiento de nuestros clientes, actuando siempre bajo el marco legal vigente.
+
+Visión: Consolidarnos como la firma líder en el norte de México, reconocida por nuestra ética, capacidad de respuesta y alianzas estratégicas globales.
+
+Valores (Grid con iconos dorados): Disciplina, Solidaridad, Honestidad y Justicia.
+
+SERVICIOS (Grid Interactivo de tarjetas):
+
+Contabilidad y Fiscal: Consultoría, cálculo de obligaciones, devoluciones de I.V.A., análisis financiero.
+
+Legal: Especialidades Mercantiles, Civiles y Laborales.
+
+Comercio Exterior: Apoyo logístico, Importaciones y Exportaciones.
+
+Especial: Promoción de créditos a PyMES.
+
+Nota al pie: "Siempre apegados al marco legal, con actualización constante."
+
+BLOGS Y ACTUALIDAD: Tarjetas para noticias sobre reformas fiscales o legales.
+
+ENLACES DE INTERÉS (LINKS): Fila de botones o logos para: BANXICO, SAT, PAGAFACIL, BURO DE CRÉDITO, IMSS e INFONAVIT.
+
+CONTACTO Y FOOTER:
+
+Formulario con: Nombre, Empresa, Correo, Teléfono, Asunto y Mensaje.
+
+Datos: Centeno No. 1172 A, Praderas Ote, Saltillo, Coah. CP 25295. Tel: (844) 662 03 39.
+
+Correo: direccion@jimenessiller.com.mx
+
+Redes: Facebook, Instagram (jsdespacho), X (jsdespacho1960), LinkedIn.
+
+REQUERIMIENTOS TÉCNICOS:
+
+Responsive Design (Mobile-first).
+
+Smooth scrolling y validación de formularios.
+
+IMPORTANTE: Crea un archivo vercel.json en la raíz con framework "vite", output "dist/public" y rewrites de todas las rutas a /index.html.

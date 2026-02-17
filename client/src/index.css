@@ -1,0 +1,219 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Fonts */
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  /* Colors - Luxury Dark Theme */
+  --color-background: hsl(0 0% 4%); /* #0A0A0A - Negro Profundo */
+  --color-foreground: hsl(0 0% 100%); /* #FFFFFF - Blanco */
+
+  --color-card: hsl(0 0% 11%); /* #1C1C1C - Gris Carbón */
+  --color-card-foreground: hsl(0 0% 100%);
+
+  --color-popover: hsl(0 0% 11%);
+  --color-popover-foreground: hsl(0 0% 100%);
+
+  --color-primary: hsl(46 65% 52%); /* #D4AF37 - Oro Principal */
+  --color-primary-foreground: hsl(0 0% 100%);
+
+  --color-secondary: hsl(0 0% 15%);
+  --color-secondary-foreground: hsl(0 0% 100%);
+
+  --color-muted: hsl(0 0% 20%);
+  --color-muted-foreground: hsl(0 0% 70%); /* #B3B3B3 - Gris Claro */
+
+  --color-accent: hsl(46 65% 52%);
+  --color-accent-foreground: hsl(0 0% 100%);
+
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+
+  --color-border: hsl(0 0% 20%);
+  --color-input: hsl(0 0% 20%);
+  --color-ring: hsl(46 65% 52%);
+
+  /* Radius */
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  /* Animation Overrides */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+/* Base Styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+/* Utility Classes for Luxury Feel */
+@layer utilities {
+  .text-gold {
+    color: hsl(46 65% 52%);
+  }
+  .bg-gold {
+    background-color: hsl(46 65% 52%);
+  }
+  .border-gold {
+    border-color: hsl(46 65% 52%);
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .luxury-gradient {
+    background: linear-gradient(135deg, hsl(0 0% 11%) 0%, hsl(0 0% 7%) 100%);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --ancho-tarjeta: 320px;
+  --alto-tarjeta: 180px;
+}
+
+.escenario-3d {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  perspective: 1200px;
+  z-index: 9999;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out; 
+  opacity: 1;
+  visibility: visible;
+}
+
+.escenario-3d.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.tarjeta-flotante {
+  width: 320px;
+  height: 180px;
+  transform-style: preserve-3d;
+}
+
+.tarjeta-flotante__capas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.tarjeta-flotante__cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  overflow: hidden;
+}
+
+.tarjeta-flotante__cara--frontal {
+  background: #1C1C1C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tarjeta-flotante__cara--trasera {
+  background: #FFFFFF;
+  color: #1A1A1A;
+  transform: rotateY(180deg);
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.watermark-image {
+  position: absolute;
+  top: 50%;
+  left: 30%; 
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  opacity: 0.5; 
+  filter: grayscale(100%);
+  z-index: 0; 
+  pointer-events: none;
+}
+
+.contenido-fisico {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.nombre-fisico {
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+}
+
+.puesto-fisico {
+  font-size: 0.8rem;
+  margin: 0 0 15px 0;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+.bloque-contacto, .bloque-direccion {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.bloque-contacto p, .bloque-direccion p {
+  margin: 0;
+}
+
+.linea-decorativa-oro {
+  position: absolute;
+  bottom: 15px;
+  left: 25px;
+  right: 25px;
+  height: 2px;
+  background-color: #D4AF37;
+}
