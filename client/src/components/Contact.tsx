@@ -47,13 +47,33 @@ export default function Contact() {
     { icon: XLogo, href: "https://x.com/jsdespacho1960" },
   ];
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Mensaje Enviado",
-      description: "Nos pondremos en contacto con usted a la brevedad.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Mensaje Enviado",
+          description: "Nos pondremos en contacto con usted a la brevedad.",
+        });
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Error al enviar');
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "No se pudo enviar el mensaje. Intente más tarde.",
+      });
+    }
   }
 
   return (
@@ -97,7 +117,7 @@ export default function Contact() {
                 <div>
                   <h4 className="text-white font-serif text-lg mb-1">Correo Electrónico</h4>
                   <p className="text-gray-400">direccion@jimenezsiller.com.mx</p>
-                  <p className="text-gray-400">jimenezhmarcoa@gmail.com</p>
+                  <p className="text-gray-400">jsdespacho1970@gmail.com</p>
                 </div>
               </div>
             </div>
