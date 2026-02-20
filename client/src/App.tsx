@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import FloatingCard from './components/FloatingCard';
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <TooltipProvider>
         <Router />
         <FloatingCard />
+        <WhatsAppButton />
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
